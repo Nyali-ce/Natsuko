@@ -1,0 +1,23 @@
+{
+  "name": "natsuko",
+  "version": "1.0.0",
+  "description": "discord bot for new very cool server!!",
+  "main": "Natsuko.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoyalGlitcher/Natsuko.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Nyalice",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RoyalGlitcher/Natsuko/issues"
+  },
+  "homepage": "https://github.com/RoyalGlitcher/Natsuko#readme"
+}
