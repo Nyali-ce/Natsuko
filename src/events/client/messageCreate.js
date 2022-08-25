@@ -1,10 +1,10 @@
 import { addXp } from '../../utils/xp.js';
 import { botOptions } from '../../utils/database.js';
+import {PermissionsBitField } from 'discord.js';
 
 export default {
     name: 'messageCreate',
     run: async (message, client) => {
-        console.log(client.commands)
         if (message.author.bot) return;
 
         if (message.guild) {
@@ -19,7 +19,16 @@ export default {
                 const cmd = commands.get(command)
 
                 if (!cmd) return;
-                
+
+                let hasPermission = true
+
+                if(cmd.permissions) {
+                    cmd.permissions.forEach(permission => {
+                        if(!message.member.permissions.has(PermissionsBitField[permission])) hasPermission = false
+                    })
+                }
+
+                if(!hasPermission) return message.channel.send('You do not have permission to use this command.')
                 cmd.run(message, args, client);
             }
         }
