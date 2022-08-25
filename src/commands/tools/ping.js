@@ -1,17 +1,7 @@
-import { SlashCommandBuilder } from 'discord.js'
-
 export default {
-    data: new SlashCommandBuilder()
-        .setName('ping')
-        .setDescription('Pong!'),
-    async run(interaction, client) {
-        const message = await interaction.deferReply({
-            fetchReply: true,
-        });
-
-        const newMessage = `API Latency: ${client.ws.ping}\nClient Ping: ${message.createdTimestamp - interaction.createdTimestamp}ms`;
-        await interaction.editReply({
-            content: newMessage,
-        });
+    name: 'ping',
+    run: async (message, args, client) => {
+        const ping = await message.channel.send(`temp`);
+        ping.edit(`API Latency: ${client.ws.ping}\nClient Ping: ${ping.createdTimestamp - message.createdTimestamp}ms`);
     }
 }
