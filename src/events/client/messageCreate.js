@@ -17,8 +17,9 @@ export default {
                 const args = message.content.slice(prefix.length).trim().split(/ +/g);
                 const command = args.shift().toLowerCase();
                 const cmd = commands.get(command)
-                console.log(cmd);
+
                 if (!cmd) return;
+                
                 cmd.run(message, args, client);
             }
         }
