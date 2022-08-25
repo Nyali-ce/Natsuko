@@ -1,0 +1,11 @@
+{
+    "prefix": "!",
+    "color": "0x00ff00",
+    "presence": {
+        "status": "online",
+        "activity": {
+            "name": "${prefix}help",
+            "type": "Watching"
+        }
+    }
+}
