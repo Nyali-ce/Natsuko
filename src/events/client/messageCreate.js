@@ -3,7 +3,8 @@ import { botOptions } from '../../utils/database.js';
 
 export default {
     name: 'messageCreate',
-    run: async message => {
+    run: async (message, client) => {
+        console.log(client.commands)
         if (message.author.bot) return;
 
         if (message.guild) {
@@ -12,10 +13,11 @@ export default {
             addXp(message.guild.id, message.author);
             
             if(message.content.startsWith(prefix)) {
+                const {commands} = client;
                 const args = message.content.slice(prefix.length).trim().split(/ +/g);
                 const command = args.shift().toLowerCase();
-                const cmd = client.commands.get(command)
-                console.log(cmd)
+                const cmd = commands.get(command)
+                console.log(cmd);
                 if (!cmd) return;
                 cmd.run(message, args, client);
             }

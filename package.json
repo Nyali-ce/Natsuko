@@ -2,9 +2,9 @@
   "name": "natsuko",
   "version": "1.0.0",
   "description": "discord bot for new very cool server!!",
-  "main": "src/Natsuko.js",
+  "main": "./Natsuko.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ."
   },
   "repository": {
     "type": "git",
