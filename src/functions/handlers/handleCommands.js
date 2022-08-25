@@ -10,6 +10,6 @@ export default client => {
             const { commands, commandArray } = client;
             commands.set(command.name, command);
             commandArray.push(command);
-        })
-    })
+        });
+    });
 }

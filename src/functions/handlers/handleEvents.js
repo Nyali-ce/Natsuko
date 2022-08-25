@@ -10,7 +10,7 @@ export default client => {
                     const { default: event } = await import(`../../events/${folder}/${file}`);
                     if (!event || !event.name || !event.run) return;
                     if (event.once) client.once(event.name, (...args) => event.run(client, ...args));
-                    else client.on(event.name, (...args) => event.run(client, ...args));
+                    else client.on(event.name, (...args) => event.run(...args, client));
                 });
                 break;
             default:

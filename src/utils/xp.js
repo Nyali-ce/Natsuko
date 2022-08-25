@@ -9,11 +9,10 @@ export async function addXp(guild_ID, member) {
 
     if (!guild_ID || !member || !user_ID) return;
 
-    const users = await guildUsers(guild_ID, 'users');
+    const users = await guildUsers(guild_ID);
 
     if (!users[user_ID]) {
         users[user_ID] = {
-            id: id,
             xp: Math.floor(Math.random() * 10) + 1,
             lastMessage: new Date().getTime()
         }

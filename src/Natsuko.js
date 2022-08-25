@@ -1,10 +1,10 @@
 import fs from 'fs';
-import { Client, Collection, GatewayIntentBits } from 'discord.js';
+import { Client, Collection, IntentsBitField, Partials } from 'discord.js';
 import 'dotenv/config';
 
 process.on('unhandledRejection', err => console.error(`${err?.stack ?? `Unkown error`}\nNode NOT Exiting...`));
 
-const client = new Client({ intents: GatewayIntentBits.Guilds });
+const client = new Client({ intents: new IntentsBitField(32767), partials: [Partials.Message, Partials.Channel] });
 
 client.commands = new Collection();
 client.commandArray = [];

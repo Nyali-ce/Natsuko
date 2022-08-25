@@ -6,7 +6,7 @@ const request = (path, dataType, id, data) => {
         if (!fs.existsSync(path)) fs.writeFileSync(path, JSON.stringify(dataType));
         return JSON.parse(fs.readFileSync(path));
     } else {
-        fs.writeFileSync(path, JSON.stringify(data), 'utf-8');
+        fs.writeFileSync(path, JSON.stringify(data));
     }
 }
 

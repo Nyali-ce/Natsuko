@@ -2,7 +2,7 @@ import { addXp } from '../../utils/xp.js';
 
 export default {
     name: 'messageCreate',
-    run: async (client, message) => {
+    run: async message => {
         if (message.author.bot) return;
 
         if (message.guild) {
