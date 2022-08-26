@@ -7,7 +7,6 @@ process.on('unhandledRejection', err => console.error(`${err?.stack ?? `Unkown e
 const client = new Client({ intents: [new IntentsBitField(32767), GatewayIntentBits.MessageContent], partials: [Partials.Message, Partials.Channel] });
 
 client.commands = new Collection();
-client.commandArray = [];
 
 const imports = new Promise(resolve => {
     const functionFolders = fs.readdirSync('src/functions');

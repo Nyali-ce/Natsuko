@@ -9,7 +9,6 @@ export default client => {
             if (!command || !command.name || !command.run) return console.log(`${file} is not a valid command.`);
             const { commands, commandArray } = client;
             commands.set(command.name, command);
-            commandArray.push(command);
         });
     });
 }

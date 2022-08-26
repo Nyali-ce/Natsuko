@@ -23,6 +23,7 @@
   "type": "module",
   "dependencies": {
     "discord.js": "^14.2.0",
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "npm": "^8.18.0"
   }
 }

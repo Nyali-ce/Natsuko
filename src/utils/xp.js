@@ -25,7 +25,7 @@ export async function addXp(guild_ID, member) {
     let newLevel = getLevel(users[user_ID].xp + xp)
     if (newLevel > level) {
         try {
-            await member.send(`You've level up to level ${newLevel}!`)
+            await member.send(`You've leveled up to level ${newLevel}!`)
         } catch (error) {
             console.log(error)
         }
