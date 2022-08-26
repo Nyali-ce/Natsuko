@@ -1,5 +1,5 @@
 export default {
-    name: 'reactionRole',
+    name: 'reactionrole',
     template: 'heheheha',
     description: 'heheheha',
     run: async (message, args, client) => {
