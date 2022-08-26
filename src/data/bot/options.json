@@ -1,6 +1,6 @@
 {
     "prefix": "!",
-    "color": "0x00ff00",
+    "color": "0xff0000",
     "presence": {
         "status": "online",
         "activity": {

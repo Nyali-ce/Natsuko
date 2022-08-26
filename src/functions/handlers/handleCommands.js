@@ -7,7 +7,7 @@ export default client => {
         commandFiles.forEach(async file => {
             const { default: command } = await import(`../../commands/${folder}/${file}`);
             if (!command || !command.name || !command.run) return console.log(`${file} is not a valid command.`);
-            const { commands, commandArray } = client;
+            const { commands } = client;
             commands.set(command.name, command);
         });
     });

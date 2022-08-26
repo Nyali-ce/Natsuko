@@ -2,9 +2,8 @@ import {guildOptions} from '../../utils/database.js';
 
 export default {
     name: 'newrole',
+    template: 'newrole <role>',
     description: 'Sets the role for new members',
-    usage: 'newrole <role>',
-
     run: async (message, args) => {
         if(!args[0]) return message.channel.send(`Please provide a role`);
         const role = message.mentions.roles.first() || message.guild.roles.cache.find(r => r.name === args.join(' ')) || message.guild.roles.cache.find(r => r.id === args[0]);
